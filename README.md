@@ -23,6 +23,7 @@ futher now we see all the basics things and technologies needed to use this appl
 ````express
     npm i mongoose, nodemon, bcryptjs, jsonwebtoken, util, path
 ````
+
 2. first install the modules
 ````express
     npm i express
@@ -107,6 +108,7 @@ futher now we see all the basics things and technologies needed to use this appl
 
 
 ````
+
 4. **{your local host | 127.0.0.1:5700/api/v1/add-post}**
 
     * by this route we can create a new post for putting on our application we have to give data via post http call
@@ -117,6 +119,85 @@ futher now we see all the basics things and technologies needed to use this appl
     "description" : "sampling 102",
     "tagged" : "@bhuvan, @amishi"
     }
-    ````
+````
+
+
+5. **{your local host | 127.0.0.1:5700/api/v1/all-post}**
+
+    * by this route we can display all post on our application we have to do get http call
+    * this type is data must be given to you from api call
+    ````json
+    {
+    "status": "ok",
+    "data": {
+        "post": [
+            {
+                "_id": "6444ec7345b1f772f53b6248",
+                "user": {
+                    "_id": "6444c6f43be064ddb0e5c419",
+                    "username": "verma",
+                    "email": "verma@gmail.com",
+                    "password": "$2a$12$bZn1JDfTfl27fcGvewPVheUqY3RYMQ/NaZAp5Cm28XAsBr9zLIUs2",
+                    "logout": false,
+                    "__v": 0
+                },
+                "title": "post application full stack development",
+                "description": "tthis is a post making application in which a user can create, read, delete and update their posts and user can can other people post                    as well and user can see comment on the post as well",
+                "tagged": "@internship",
+                "username": "verma",
+                "likes": 0,
+                "comments": [
+                    [
+                        "verma",
+                        "the backend is written in node-js , express.js and MongoDB, while front end is render with server-side pug template rendering"
+                    ]
+                ],
+                "identifier": 539044396070133200,
+                "__v": 1
+            }
+        ]
+    }
+}
+````
+
+
+6. **{your local host | 127.0.0.1:5700/api/v1/delete-post}**
+    * by this route we can delete the post created by us on our application we have to do delete http call we have to pass the id of the document to the call
+ 
+7. **{your local host | 127.0.0.1:5700/api/v1/update-post}**
+    * by this route we can update the post created by us on our application we have to do patch http call we have to pass the id of the document to the call and we         have to pass the updated items as well
+    * the data goes to http cal looks like this
+    ````json
+    {
+    "id" : 40495709936087864,
+    "description" : "post application"
+    }
+````
+8. **{your local host | 127.0.0.1:5700/api/v1/comment-post}**
+    * by this route we can comment on the post created by us and other on our application we have to do post http call we have to pass the id of the document to the call and we         have to pass the comment items as well
+    * the data goes to http cal looks like this
+    ````json
+    {
+    "id" : 40495709936087864,
+    "comment" : "post application"
+    }
+````
+9. **{your local host | 127.0.0.1:5700/api/v1/like-post}**
+    * by this route we can like on the post created by us and others on our application we have to do post http call we have to pass the id of the document to the call 
+    * the data goes to http cal looks like this
+    ````json
+    {
+    "id" : 40495709936087864
+    }
+````
+9. **{your local host | 127.0.0.1:5700/api/v1/bookmark-post}**
+    * by this route we can bookmark a post created by us and other on our application we have to do post http call we have to pass the id of the document to the call 
+    * the data goes to http cal looks like this
+    ````json
+    {
+    "id" : 40495709936087864
+    }
+````
+
 
 
